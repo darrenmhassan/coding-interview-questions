@@ -1,10 +1,8 @@
-package iv;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by dhssn on 10/2/16.
+ *
  */
 public class AlphabetGrid {
 

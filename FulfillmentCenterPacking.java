@@ -1,11 +1,10 @@
-package iv;
-
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
 import java.util.*;
+import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 

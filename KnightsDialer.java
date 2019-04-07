@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.HashMap;
 
 /**
  * Blog post: https://hackernoon.com/google-interview-questions-deconstructed-the-knights-dialer-f780d516f029

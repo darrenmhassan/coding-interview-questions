@@ -1,5 +1,3 @@
-package iv;
-
 import java.lang.reflect.Array;
 
 /**
@@ -134,7 +132,7 @@ public class HashMap<K, V> {
 
     public static void main(final String[] argc) {
 
-        final HashMap<String, Integer> m = new HashMap(5);
+        final HashMap<String, Integer> m = new HashMap<>(5);
         m.put("one", 1);
         m.put("two", 2);
         m.put("three", 3);
