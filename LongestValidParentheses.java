@@ -1,3 +1,5 @@
+package iv;
+
 import java.util.Stack;
 
 /**
@@ -17,7 +19,7 @@ import java.util.Stack;
  * Output: 4
  * Explanation: The longest valid parentheses substring is "()()"
  */
-class LongestValidParentheses {
+public class LongestValidParentheses {
     public int longestValidParentheses(String s) {
         int n = s.length();
 

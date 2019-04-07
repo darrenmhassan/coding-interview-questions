@@ -1,4 +1,11 @@
-import java.util.*;
+package iv;
+
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Blog post: https://medium.com/@alexgolec/google-interview-problems-synonymous-queries-36425145387c
@@ -56,7 +63,7 @@ public class SynonymousQueries {
     }
 
     private boolean areSynonymous(final String q1,
-                                 final String q2) {
+                                  final String q2) {
 
         final String[] q1Words = q1.split(" ");
         final String[] q2Words = q2.split(" ");
