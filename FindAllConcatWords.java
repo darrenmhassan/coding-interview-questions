@@ -3,29 +3,53 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Given a list of words (without duplicates),
+ * please write a program that returns all concatenated words in the given list of words.
+ *
+ * A concatenated word is defined as a string that is comprised entirely of at least two
+ * shorter words in the given array.
+ *
+ * Example:
+ * Input: ["cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"]
+ *
+ * Output: ["catsdogcats","dogcatsdog","ratcatdogcat"]
+ *
+ * Explanation: "catsdogcats" can be concatenated by "cats", "dog" and "cats";
+ *  "dogcatsdog" can be concatenated by "dog", "cats" and "dog";
+ * "ratcatdogcat" can be concatenated by "rat", "cat", "dog" and "cat".
+ *
+ */
 class FindAllConcatWords {
+
     public List<String> findAllConcatenatedWordsInADict(String[] words) {
 
         Set<String> wordSet = new HashSet<>();
         for (int i = 0; i < words.length; i++) {
             wordSet.add(words[i]);
         }
-        List<String> concatWords = new ArrayList<>();
+        Set<String> concatWords = new HashSet<>();
         for (int i = 0; i < words.length; i++) {
-            String word = words[i];
-            int subStart = 0;
-            for (int j = 1; j <= word.length(); j++) {
-                String sub = word.substring(subStart, j);
-                if (sub.length() < word.length()
-                        && wordSet.contains(sub)) {
-                    subStart = j;
-                    if (j == word.length()) {
-                        concatWords.add(word);
-                    }
-                }
-            }
+            wordSearch(words[i], 0, 1, wordSet, concatWords);
         }
-        return concatWords;
+        return new ArrayList<>(concatWords);
+    }
+
+    private void wordSearch(String word, int startIdx, int endIdx,
+                            Set<String> wordSet,
+                            Set<String> concatWords) {
+        while (endIdx <= word.length() && !concatWords.contains(word)) {
+            String subStr = word.substring(startIdx, endIdx);
+            if (subStr.length() < word.length() && wordSet.contains(subStr)) {
+                if (endIdx == word.length()) {
+                    concatWords.add(word);
+                    return;
+                }
+                wordSearch(word, startIdx, endIdx + 1, wordSet, concatWords);
+                startIdx = endIdx;
+            }
+            endIdx++;
+        }
     }
 
     public static void main(String[] args) {
