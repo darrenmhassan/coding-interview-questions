@@ -19,6 +19,7 @@ import java.util.Set;
  *  "dogcatsdog" can be concatenated by "dog", "cats" and "dog";
  * "ratcatdogcat" can be concatenated by "rat", "cat", "dog" and "cat".
  *
+ * Source: https://leetcode.com/problems/concatenated-words/
  */
 class FindAllConcatWords {
 
