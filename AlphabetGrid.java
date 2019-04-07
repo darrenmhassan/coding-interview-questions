@@ -7,12 +7,17 @@ import java.util.List;
  * for each character in the string.
  *
  * Example: where n is 5 the grid would consist of:
- *  {'A', 'B', 'C', 'D', 'E'},
- *  {'F', 'G', 'H', 'I', 'J'},
- *  {'K', 'L', 'M', 'N', 'O'},
- *  {'P', 'Q', 'R', 'S', 'T'},
- *  {'U', 'V', 'W', 'X', 'Y'},
- *  {'Z'}
+ * [[A, B, C, D, E]
+ *  [F, G, H, I, J]
+ *  [K, L, M, N, O]
+ *  [P, Q, R, S, T]
+ *  [U, V, W, X, Y]
+ *  [Z]]
+ *
+ *  [[ 0, 0], [ 0, 1], ...
+ *   [ 1, 0], [ 1, 1], ...
+ *   ...
+ *   [ 5, 0]]
  * The coordinates of the String "PRIME" are:
  *   [[ 0, 3 ], [ 2, 3 ], [ 3, 1 ], [ 2, 2 ], [ 4, 0 ]]
  *
@@ -40,23 +45,29 @@ public class AlphabetGrid {
                 "the coordinates of %s are: %s",
                 s,
                 coordinateList));
+        for (int i = 0; i < alphabetGrid.length; i++) {
+            for (int j = 0; j < alphabetGrid[i].length; j++) {
+                System.out.print(alphabetGrid[i][j] + ", ");
+            }
+            System.out.println();
+        }
         for (final Coordinate c : coordinateList) {
-            System.out.print(alphabetGrid[c.y][c.x]);
+            System.out.print(alphabetGrid[c.row][c.offset]);
         }
     }
 
     private static class Coordinate {
 
-        private int x;
-        private int y;
+        private int offset;
+        private int row;
 
-        public Coordinate(final int x, final int y) {
-            this.x = x;
-            this.y = y;
+        public Coordinate(final int row, final int offset) {
+            this.offset = offset;
+            this.row = row;
         }
 
         public String toString() {
-            return "[ " + x + ", " + y +" ]";
+            return "[ " + offset + ", " + row +" ]";
         }
     }
 
@@ -68,7 +79,7 @@ public class AlphabetGrid {
         for (int i = 0; i < charArray.length; i++) {
             // this step requires an understanding of ASCII character encoding
             int offset = charArray[i] - 'A';
-            coordinateList.add(new Coordinate(offset % n, offset / n));
+            coordinateList.add(new Coordinate(offset / n, offset % n));
         }
         return coordinateList;
     }
