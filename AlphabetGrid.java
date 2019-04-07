@@ -2,7 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Question: given a number n and string, where n is the width of a grid
+ * that contains the characters of the alphabet a-to-z, find the coordinates
+ * for each character in the string.
  *
+ * Example: where n is 5 the grid would consist of:
+ *  {'A', 'B', 'C', 'D', 'E'},
+ *  {'F', 'G', 'H', 'I', 'J'},
+ *  {'K', 'L', 'M', 'N', 'O'},
+ *  {'P', 'Q', 'R', 'S', 'T'},
+ *  {'U', 'V', 'W', 'X', 'Y'},
+ *  {'Z'}
+ * The coordinates of the String "PRIME" are:
+ *   [[ 0, 3 ], [ 2, 3 ], [ 3, 1 ], [ 2, 2 ], [ 4, 0 ]]
+ *
+ * Source: Google phone screen
  */
 public class AlphabetGrid {
 
