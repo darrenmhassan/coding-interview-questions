@@ -1,5 +1,8 @@
 import java.util.*;
 
+/**
+ *
+ */
 public class GrapherColorer {
 
     private int degree = 0;

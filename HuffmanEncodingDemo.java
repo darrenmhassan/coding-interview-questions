@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 /**
- * Created by dhssn on 10/23/16.
+ *
  */
 public class HuffmanEncodingDemo {
 

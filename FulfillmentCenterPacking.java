@@ -9,7 +9,9 @@ import java.util.HashMap;
 import static org.junit.Assert.assertEquals;
 
 /**
- * https://medium.com/solvingalgo/solving-algorithmic-problems-possible-hotel-bookings-fa3a544c6683
+ *
+ *
+ * Source: https://medium.com/solvingalgo/solving-algorithmic-problems-possible-hotel-bookings-fa3a544c6683
  */
 public class FulfillmentCenterPacking {
 

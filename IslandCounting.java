@@ -1,7 +1,7 @@
 import java.util.Random;
 
 /**
- * Created by dhssn on 10/20/16.
+ *
  */
 public class IslandCounting {
 

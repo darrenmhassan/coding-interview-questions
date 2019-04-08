@@ -3,7 +3,7 @@ import java.util.Stack;
 /**
  * Write an algorithm to determine if a tree is a sub-tree of another tree.
  *
- * Created by dhssn on 2/28/17.
+ *
  */
 public class SubTree {
 

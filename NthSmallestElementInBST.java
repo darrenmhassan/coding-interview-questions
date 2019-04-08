@@ -3,7 +3,7 @@ import java.util.Stack;
 /**
  * Find the nth smallest element in a binary search tree.
  *
- * Created by dhssn on 2/20/17.
+ *
  */
 public class NthSmallestElementInBST {
 

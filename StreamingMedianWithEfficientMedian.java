@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 /**
- * Created by dhssn on 4/5/17.
+ *
  */
 public class StreamingMedianWithEfficientMedian {
 
