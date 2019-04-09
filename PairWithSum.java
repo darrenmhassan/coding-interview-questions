@@ -4,7 +4,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * Question: Given a collection of numbers and a target,
+ * fine a pair of numbers that when summed together equal the target.
  *
+ * Source: https://medium.com/@manivel45/given-a-list-of-numbers-and-a-target-return-whether-any-two-numbers-from-the-list-add-up-to-b09207f920f4
  */
 public class PairWithSum {
 
