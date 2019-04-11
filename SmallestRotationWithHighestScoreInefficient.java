@@ -28,7 +28,7 @@ import java.util.TreeMap;
  *
  * Source: https://leetcode.com/problems/smallest-rotation-with-highest-score/
  */
-public class SmallestRotationWithHighestScore {
+public class SmallestRotationWithHighestScoreInefficient {
 
     public int bestRotation(int[] A) {
         if (A == null || A.length < 1) {
