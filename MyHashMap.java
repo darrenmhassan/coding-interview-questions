@@ -3,7 +3,7 @@ import java.lang.reflect.Array;
 /**
  *
  */
-public class HashMap<K, V> {
+public class MyHashMap<K, V> {
 
     private class MapNode<K,V> {
         private K key;
@@ -25,7 +25,7 @@ public class HashMap<K, V> {
     private final MapNode[] hashKeys;
     private final int size;
 
-    public <K, V> HashMap(final int size) {
+    public <K, V> MyHashMap(final int size) {
         if (size < 1) {
             throw new IllegalArgumentException("size must be greater than or equal to 1");
         }
@@ -132,7 +132,7 @@ public class HashMap<K, V> {
 
     public static void main(final String[] argc) {
 
-        final HashMap<String, Integer> m = new HashMap<>(5);
+        final MyHashMap<String, Integer> m = new MyHashMap<>(5);
         m.put("one", 1);
         m.put("two", 2);
         m.put("three", 3);
