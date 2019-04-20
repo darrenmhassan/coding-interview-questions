@@ -5,6 +5,12 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.Duration;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -39,6 +45,17 @@ public class BestTimeToBuySellStock3 {
     }
 
     @Test
+    public void testCase4() {
+        int[] prices = readBestTimeToBuySell3TestData();
+        BestTimeToBuySellStock3 solution = new BestTimeToBuySellStock3();
+        long start = System.currentTimeMillis();
+        int maxProfit = solution.maxProfit(prices);
+        Duration duration = Duration.ofMillis(System.currentTimeMillis() - start);
+        System.out.println(String.format("testCase4 duration %s", duration));
+        assertEquals(4, maxProfit);
+    }
+
+    @Test
     public void testCase1() {
         int[] prices = new int[] {3,3,5,0,0,3,1,4};
         BestTimeToBuySellStock3 solution = new BestTimeToBuySellStock3();
@@ -54,5 +71,21 @@ public class BestTimeToBuySellStock3 {
         if (result.wasSuccessful()) {
             System.out.println("All tests passed.");
         }
+    }
+
+    private int[] readBestTimeToBuySell3TestData() {
+        int[] prices = new int[0];
+        File file = new File("C:\\Users\\darre\\coding-interview-questions\\precompute\\BestTimeToBuySellStock3Data.txt");
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String fileStr = br.readLine();
+            String[] pricesStr = fileStr.split(",");
+            prices = new int[pricesStr.length];
+            for (int p = 0; p < pricesStr.length; p++) {
+                prices[p] = Integer.parseInt(pricesStr[p]);
+            }
+        } catch (IOException e) {
+        }
+        return prices;
     }
 }
