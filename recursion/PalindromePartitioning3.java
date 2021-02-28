@@ -1,7 +1,7 @@
 package recursion;
 
 /**
- * Problem 1278
+ * Problem: 1278
  * Source: https://leetcode.com/problems/palindrome-partitioning-iii/
  */
 public class PalindromePartitioning3 {
