@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Problem: 1002
+ * Source: https://leetcode.com/problems/find-common-characters/
+ */
 class FindCommonCharacters {
     public List<String> commonChars(String[] A) {
 
