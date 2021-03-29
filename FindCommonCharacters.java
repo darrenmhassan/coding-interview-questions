@@ -9,32 +9,32 @@ import java.util.List;
 class FindCommonCharacters {
     public List<String> commonChars(String[] A) {
 
-        List<String> sortedStrs = new ArrayList<>();
+        List<char[]> sortedStrs = new ArrayList<>();
         for (int i = 0; i < A.length; i++) {
             String s = A[i];
             char[] c = s.toCharArray();
             Arrays.sort(c);
-            sortedStrs.add(new String(c));
+            sortedStrs.add(c);
         }
 
         List<String> ret = new ArrayList<>();
-        for (int i = 0; i < sortedStrs.get(0).length(); i++) {
-            char firstStrC = sortedStrs.get(0).charAt(i);
+        for (int i = 0; i < sortedStrs.get(0).length; i++) {
+            char firstStrC = sortedStrs.get(0)[i];
             boolean charPresent = true;
             for (int j = 1; j < sortedStrs.size() && charPresent; j++) {
-                for (int k = 0; k < sortedStrs.get(j).length(); k++) {
-                    if (k == sortedStrs.get(j).length() -1
-                            && firstStrC != sortedStrs.get(j).charAt(k)) {
+                for (int k = 0; k < sortedStrs.get(j).length; k++) {
+                    if (k == sortedStrs.get(j).length -1
+                            && firstStrC != sortedStrs.get(j)[k]) {
                         charPresent = false;
-                    } else if (firstStrC == sortedStrs.get(j).charAt(k)) {
-                        char[] s = sortedStrs.get(j).toCharArray();
+                    } else if (firstStrC == sortedStrs.get(j)[k]) {
+                        char[] s = sortedStrs.get(j);
                         StringBuilder sb = new StringBuilder();
                         for (int l = 0; l < s.length; l++) {
                             if (l != k) {
                                 sb.append(s[l]);
                             }
                         }
-                        sortedStrs.set(j, sb.toString());
+                        sortedStrs.set(j, sb.toString().toCharArray());
                         break;
                     }
                 }
